@@ -36,4 +36,14 @@ $(document).ready(function () {
             sync: true,
         },
     });
+
+    // Mic Button Click Event
+    $("#MicBtn").click(function () { 
+        $("#oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
+
+        // Call the exposed Python function
+        eel.play_sound();
+    });
+    
 });

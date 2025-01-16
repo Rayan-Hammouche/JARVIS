@@ -1,12 +1,10 @@
 import eel
-from playsound import playsound
-
-# Playing Assistant Sound Function
-def playAssistantSound():
-    music_dir = "www\\assets\\audio\Audio.mp3"
-    playsound(music_dir)
-
-playAssistantSound()
+from engine.features import playAssistantSound
 
 eel.init("www")
+
+@eel.expose
+def play_sound():
+    playAssistantSound()
+
 eel.start('index.html', mode='edge', host='localhost', block=True)
